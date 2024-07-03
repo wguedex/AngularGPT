@@ -1,3 +1,4 @@
+export { TextMessageBoxSelectComponent } from "./text-boxes/textMessageBoxSelect/textMessageBoxSelect.component"; 
 export { TextMessageBoxFileComponent } from "./text-boxes/textMessageBoxFile/textMessageBoxFile.component";
 export { TextMessageBoxComponent } from "./text-boxes/textMessageBox/textMessageBox.component"; 
 export { TypingLoaderComponent } from "./TypingLoader/TypingLoader.component"; 
