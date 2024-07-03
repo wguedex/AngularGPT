@@ -17,11 +17,13 @@
     </div>
 
     <!-- MessageBox -->
-     <app-text-message-box
+     <!-- <app-text-message-box
      placeHolder="Escribe aqui lo que deseas"
      (onMessage)="handleMessage($event)"
-     />
-
+     /> -->
+    <app-text-message-box-file
+    placeHolder="Escribe aqui lo que deseas"
+    (onMessage)="handleMessageWithFile($event)"/>
 
 
 </div>
