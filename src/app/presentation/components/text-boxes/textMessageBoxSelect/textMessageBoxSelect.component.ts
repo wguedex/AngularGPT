@@ -35,7 +35,7 @@ export class TextMessageBoxSelectComponent {
 
     public form = this.fb.group({
         prompt : [], 
-        file: [null,Validators.required],
+        file: [null],
         selectedOption: ['',Validators.required]
     }); 
 
