@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject, signal } from "@angular/core";
 import {
   ChatMessageComponent,
+  GptMessageOrthographyComponent,
   MyMessageComponent,
   TextMessageBoxComponent,
   TextMessageBoxFileComponent,
@@ -23,7 +24,8 @@ import { OpenAiService } from "@services/openai.service";
     TypingLoaderComponent,
     TextMessageBoxComponent,
     TextMessageBoxFileComponent,
-    TextMessageBoxSelectComponent
+    TextMessageBoxSelectComponent,
+    GptMessageOrthographyComponent
   ],
   templateUrl: "./orthographyPage.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -48,7 +50,17 @@ export default class OrthographyPageComponent {
     this.openAiService.checkOrthography(prompt)
     .subscribe(resp => {
       this.isLoading.set(false)
-      console.log(resp)
+
+      this.messages.update(prev=>[
+        ...prev,
+        {
+          isGpt: true,
+          text: resp.message,
+          info: resp
+        }
+      ])
+
+      // console.log(resp)
     })
 
     // console.log({ prompt });
