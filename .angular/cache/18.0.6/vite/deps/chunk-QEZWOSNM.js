@@ -8,7 +8,7 @@ import {
   isPlatformServer,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-CC7PZPFL.js";
+} from "./chunk-V5ZNNP36.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_ID,
@@ -73,13 +73,9 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-LGAJH4RL.js";
+} from "./chunk-IWNIJL4L.js";
 import {
   Observable,
-  __async,
-  __objRest,
-  __spreadProps,
-  __spreadValues,
   concatMap,
   filter,
   finalize,
@@ -88,7 +84,13 @@ import {
   of,
   switchMap,
   tap
-} from "./chunk-R7GQRDZ6.js";
+} from "./chunk-4J25ECOH.js";
+import {
+  __async,
+  __objRest,
+  __spreadProps,
+  __spreadValues
+} from "./chunk-IVSKKVYG.js";
 
 // node_modules/@angular/common/fesm2022/http.mjs
 var HttpHandler = class {
@@ -4070,6 +4072,7 @@ function provideClientHydration(...features) {
 var VERSION = new Version("18.0.5");
 
 export {
+  HttpClient,
   BrowserDomAdapter,
   BrowserGetTestability,
   EVENT_MANAGER_PLUGINS,
@@ -4123,4 +4126,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-YIIPTTMP.js.map
+//# sourceMappingURL=chunk-QEZWOSNM.js.map
