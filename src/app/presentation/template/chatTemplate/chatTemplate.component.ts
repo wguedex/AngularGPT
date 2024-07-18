@@ -26,17 +26,26 @@ export class ChatTemplateComponent {
   public messages = signal<Message[]>([{text:'Hola Mundo', isGpt: true}]);
   public isLoading = signal(false);
   public openAiService = inject(OpenAiService);
-
-  handleMessage(prompt: string) {
-    console.log({ prompt });
-  }
-
-  handleMessageWithFile({ prompt, file }: TextMessageEvent) {
-    console.log({ prompt, file });
-  }
-
+ 
   handleMessageWithSelect({ prompt, selectedOption }: TextMessageBoxEvent) {
-    console.log({ prompt, selectedOption });
+    const message = `${selectedOption} - ${prompt}`;
+
+    this.messages.update(prev => [...prev, {text:message, isGpt:false}])
+    this.isLoading.set(true);
+
+    this.openAiService.textToAudio(prompt,selectedOption)
+    .subscribe(({message,audioUrl})=> {
+      this.isLoading.set(false);
+      this.messages.update(prev => [
+        ...prev,
+        {
+          isGpt:true,
+          text: message , 
+          audioUrl: audioUrl
+        }
+      ])
+    });
+
   }
 
 }
