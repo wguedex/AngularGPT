@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {    audioToTextUseCase, 
             imageGenerationUseCase, 
+            imageVariationUseCase, 
             orthographyUseCase, 
             prosConsStreamUseCase, 
             prosConsUseCase, 
@@ -41,6 +42,10 @@ export class OpenAiService {
 
       imageGeneration( prompt: string, originalImage?: string, maskImage?: string ) {
         return from( imageGenerationUseCase(prompt, originalImage, maskImage ) )
+      }
+
+      imageVariation( originalImage: string ) {
+        return from( imageVariationUseCase( originalImage ) );
       }
 
 }
