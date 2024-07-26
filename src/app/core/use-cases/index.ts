@@ -8,4 +8,5 @@ export { audioToTextUseCase } from "./audios/audio-to-text.use-case";
 export { imageGenerationUseCase } from "./image-generation/image-generation.use-case";
 export { imageVariationUseCase } from "./image-generation/image-variation.use-case";
 
- 
+export * from './assistant/create-thread.use-case';
+export * from './assistant/post-question.use-case';
